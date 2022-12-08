@@ -8,7 +8,7 @@ PlayerSettings:
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 0
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -155,7 +155,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.unity.TrainingDay2016
+    Android: com.DefaultCompany.PleaseTheClient
     Standalone: com.DefaultCompany.Please-The-Client
     Tizen: com.unity.TrainingDay2016
     iPhone: com.unity.TrainingDay2016
@@ -249,7 +249,7 @@ PlayerSettings:
   useCustomBaseGradleTemplate: 0
   useCustomGradlePropertiesTemplate: 0
   useCustomProguardFile: 0
-  AndroidTargetArchitectures: 5
+  AndroidTargetArchitectures: 15
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
@@ -965,7 +965,7 @@ PlayerSettings:
     iPhone: 1
     tvOS: 1
   scriptingBackend:
-    Android: 0
+    Android: 1
     Standalone: 0
     WebGL: 1
     WebPlayer: 0

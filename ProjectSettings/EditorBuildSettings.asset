@@ -6,12 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Unity Technologies/Adventure - Sample Game/Scenes/Persistent.unity
-    guid: ef18a6fcc8276e541a14d91f5fb2d496
+    path: Assets/Scenes/game scenes/LandingScene.unity
+    guid: 4f5473ccb73150a4babd82deeb76bacb
+  - enabled: 1
+    path: Assets/Scenes/game scenes/popUpMenu.unity
+    guid: 6d6ffd585253053469f49c7d737db7fd
+  - enabled: 1
+    path: Assets/Scenes/game scenes/ProgressScene.unity
+    guid: d5f86333bed54ac4fba10469f456e2b9
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Level 1.unity
+    guid: 3020f6f7c8ece2f4da9fa9ca87063961
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Level1Reading 1.unity
+    guid: 4aec9f005514e6d48b08a92a0e16e4f7
   - enabled: 1
     path: Assets/Scenes/Level 2/Level 2.unity
     guid: fa8464330437a6c439e767c377bbee1d
   - enabled: 1
-    path: Assets/Scenes/Level 1/Level 1.unity
-    guid: 3020f6f7c8ece2f4da9fa9ca87063961
+    path: Assets/Scenes/Level 2/Level2Reading 2.unity
+    guid: 67f232a59befa204890d66304bfa84f4
   m_configObjects: {}
