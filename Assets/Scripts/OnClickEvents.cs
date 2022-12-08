@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,11 +6,16 @@ public class OnClickEvents : MonoBehaviour
 {
     public GameObject optionOne;
     public GameObject optionTwo;
+
     public GameObject checkMark;
     public GameObject checkMark1;
+
     public GameObject backToOption;
+
     public GameObject firstResponse;
     public GameObject secondResponse;
+    public GameObject customersButton;
+    public GameObject bluePanel;
 
     private int resumeIndex;
 
@@ -21,6 +27,8 @@ public class OnClickEvents : MonoBehaviour
 
     public bool firstOption = false;
     public bool secondOption = false;
+
+    public bool isCustomerMessage = true;
 
     // Start is called before the first frame update
     void Start()
@@ -83,6 +91,7 @@ public class OnClickEvents : MonoBehaviour
     {
         secondOption = false;
         firstOption = true;
+        isCustomerMessage = false;
         //UI panel to display response so player can choose from
         checkMark.SetActive(false);
         checkMark1.SetActive(false);
@@ -90,6 +99,8 @@ public class OnClickEvents : MonoBehaviour
 
         optionOne.SetActive(false);
         optionTwo.SetActive(false);
+
+        customersButton.SetActive(false);
         // Set answer panel active for player to read
         firstResponse.SetActive(true);
     }
@@ -98,6 +109,7 @@ public class OnClickEvents : MonoBehaviour
     {
         firstOption = false;
         secondOption = true;
+        isCustomerMessage = false;
         //UI panel to display response so player can choose from
         checkMark.SetActive(false);
         checkMark1.SetActive(false);
@@ -105,15 +117,46 @@ public class OnClickEvents : MonoBehaviour
 
         optionOne.SetActive(false);
         optionTwo.SetActive(false);
+
+        customersButton.SetActive(false);
         // Set answer panel active for player to read
         secondResponse.SetActive(true);
     }
 
+    public void CustomerButton()
+    {
+        StartCoroutine(DelayOptions(10.0f));
+
+        /*optionOne.SetActive(true);
+        optionTwo.SetActive(true);
+
+        checkMark.SetActive(true);
+        checkMark1.SetActive(true);
+        // How do you response panel
+        bluePanel.SetActive(true);*/
+    }
+
+    IEnumerator DelayOptions(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        optionOne.SetActive(true);
+        optionTwo.SetActive(true);
+
+        checkMark.SetActive(true);
+        checkMark1.SetActive(true);
+        // How do you response panel
+        bluePanel.SetActive(true);
+    }
+
     public void BackToOption()
     {
+        isCustomerMessage = true;
+
         //UI panel for player to choose an answer
         checkMark.SetActive(true);
         checkMark1.SetActive(true);
+        customersButton.SetActive(true);
         backToOption.SetActive(false);
         //disable both answer panel
         firstResponse.SetActive(false);
