@@ -1,8 +1,12 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
     private OnClickEvents onClickEvents;
+
+    public TextMeshProUGUI responseOne;
+    public TextMeshProUGUI responseTwo;
 
     // Start is called before the first frame update
     void Start()
