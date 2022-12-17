@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScrollingText : MonoBehaviour
 {
     [Header("Text Setting")]
-    [SerializeField][TextArea] private string[] itemInfo;
+    [SerializeField][TextArea] public string[] itemInfo;
     [SerializeField] private float textSpeed = 0.01f;
 
     [Header("UI Elements")]
@@ -14,6 +14,7 @@ public class ScrollingText : MonoBehaviour
 
     public void ActivateText()
     {
+        GameObject.FindObjectOfType<PlayerInteraction>();
         StartCoroutine(AnimateText());
     }
 

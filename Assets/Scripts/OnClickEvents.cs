@@ -26,7 +26,9 @@ public class OnClickEvents : MonoBehaviour
     public bool isLevelFive = false;
 
     public bool firstOption = false;
+    public bool selectFirst = false;
     public bool secondOption = false;
+    public bool selectSecond = false;
 
     public bool isCustomerMessage = true;
 
@@ -54,7 +56,7 @@ public class OnClickEvents : MonoBehaviour
     public void LevelOne()
     {
         SceneManager.LoadScene("Level 1");
-        isLevelOne = true;
+        Debug.Log("isLevelOne = true");
     }
 
     public void LevelTwo()
@@ -85,6 +87,20 @@ public class OnClickEvents : MonoBehaviour
 
         isLevelFive = true;
         Debug.Log("Level_5");
+    }
+
+    public void SelectFirst()
+    {
+        selectSecond = false;
+        selectFirst = true;
+        //prevent more than one selection
+    }
+
+    public void SelectSecond()
+    {
+        selectFirst = false;
+        selectSecond = true;
+        //prevent more than one selection
     }
 
     public void FirstOption()
@@ -125,15 +141,8 @@ public class OnClickEvents : MonoBehaviour
 
     public void CustomerButton()
     {
+        GameObject.FindObjectOfType<PlayerInteraction>().Interaction(SceneManager.GetActiveScene().name, 0);
         StartCoroutine(DelayOptions(10.0f));
-
-        /*optionOne.SetActive(true);
-        optionTwo.SetActive(true);
-
-        checkMark.SetActive(true);
-        checkMark1.SetActive(true);
-        // How do you response panel
-        bluePanel.SetActive(true);*/
     }
 
     IEnumerator DelayOptions(float seconds)
@@ -171,6 +180,17 @@ public class OnClickEvents : MonoBehaviour
         // take back to Mainmenu
         SceneManager.LoadScene(0);
         Debug.Log("Back");
+    }
+
+    public void Cancel()
+    {
+        // returns to scene with levels
+        SceneManager.LoadScene("ProgressScene");
+    }
+
+    public void Reload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Quit()
